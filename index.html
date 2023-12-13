@@ -22,18 +22,18 @@
  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><i class="fa-solid fa-temperature-low"></i> Baby, Is It Cold Outside?</a>
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-temperature-low"></i> Mitten and Lucy's Weather Station </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i> Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Explore
+                <i class="fa-solid fa-cat fa-bounce"></i>Explore
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-house"></i> Current</a></li>
@@ -44,10 +44,17 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container container-fluid">
       <div class="row">
-        <div class="col">The current temperature is:</div>
-        <div class="col" id="temp">Loading...</div>
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 ">The current temperature is: </div>
+        <div class="col">
+          <div style="text-decoration: underline;" id="temp">Loading...</div>
+          <div style="text-decoration: underline;" id="temp-c">Loading...</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 " id="mitten-picture"></div>
+        <div class="col" id="weather-text">It's cold!</div>
       </div>
     </div>
 

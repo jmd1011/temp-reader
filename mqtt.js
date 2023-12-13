@@ -24,13 +24,14 @@ const options = {
   username: 'emqx',
   password: 'public',
 }
+
 const client  = mqtt.connect(url, options)
+
 client.on('connect', function () {
   console.log('Connected')
   // Subscribe to a topic
   client.subscribe('lucy-temp', function (err) {
     if (!err) {
-      // Publish a message to a topic
       console.log("we subscribed")
     }
   })
@@ -39,6 +40,14 @@ client.on('connect', function () {
 // Receive messages
 client.on('message', function (topic, message) {
   // message is Buffer
-  $('#temp').text(message.toString())
+  let test = message.toString()
+  let tempInC = parseFloat(test) / 1000
+  let tempInF = convertCtoF(tempInC)
+  $('#temp').text(tempInF.toFixed(2) + "°F")
+  $('#temp-c').text(tempInC.toFixed(2) + "°C")
   // client.end()
 })
+
+function convertCtoF(tempInC) {
+  return tempInC * 9 / 5 + 32
+}
